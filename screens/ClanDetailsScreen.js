@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, Animated, LayoutAnimation, Pressable, RefreshControl, ScrollView, StyleSheet, View } from 'react-native';
 import { IconButton, Text, useTheme } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import MaterialCommunityIcons from '../components/MaterialCommunityIcons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { fetchClan, fetchClanMembers } from '../api/client';
 import { getClanBadgeImage } from '../utils/clanBadges';
