@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Animated, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { Text, useTheme } from 'react-native-paper';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import MaterialCommunityIcons from '../components/MaterialCommunityIcons';
 
 const ITEMS = [
   { title: 'Profile', icon: 'account-circle-outline' },
