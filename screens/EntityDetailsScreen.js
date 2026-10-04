@@ -200,6 +200,12 @@ function AnimatedDetailItem({ children, index = 0, layoutStyle }) {
   }, [animation, idRef]);
 
   const measureItem = useCallback(() => {
+    if (Platform.OS === 'web') {
+      layout.measured = true;
+      animateIn();
+      return;
+    }
+
     if (!animation?.scrollRef?.current || !nodeRef.current) return;
     nodeRef.current.measureInWindow((_, pageY, __, height) => {
       animation.scrollRef.current?.measureInWindow((__, scrollPageY) => {
