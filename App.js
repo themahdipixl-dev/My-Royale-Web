@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { BackHandler, Animated, StyleSheet, PanResponder, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { useFonts } from 'expo-font';
+import * as Font from 'expo-font';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Text, useTheme } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -11,10 +11,11 @@ import HomeScreen from './screens/HomeScreen';
 import BottomNav from './components/BottomNav';
 
 export default function App() {
-  const [fontsLoaded] = useFonts([MaterialCommunityIcons.font]);
   const theme = useTheme();
 
-  if (!fontsLoaded) return null;
+  useEffect(() => {
+    Font.loadAsync(MaterialCommunityIcons.font).catch(() => {});
+  }, []);
   const { width: windowWidth } = useWindowDimensions();
   const [activeTab, setActiveTab] = useState('home');
   const activeTabRef = useRef(activeTab);
