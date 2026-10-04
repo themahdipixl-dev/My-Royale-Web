@@ -1,0 +1,12 @@
+{
+  "expo":{
+    "name":"My Royale Web",
+    "slug":"my-royale-web",
+    "version":"1.0.0",
+    "orientation":"portrait",
+    "web":{
+      "output":"single",
+      "bundler":"metro"
+    }
+  }
+}
