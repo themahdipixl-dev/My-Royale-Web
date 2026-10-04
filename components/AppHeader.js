@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { Animated } from 'react-native';
 import { View, Text, StyleSheet } from 'react-native';
 import { Surface, useTheme } from 'react-native-paper';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import MaterialCommunityIcons from './MaterialCommunityIcons';
 
 export default function AppHeader() {
   const theme = useTheme();
