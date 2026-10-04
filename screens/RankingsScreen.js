@@ -3,7 +3,7 @@ import React, { useState, useEffect, useCallback, useMemo, useRef } from 'react'
 import { View, FlatList, StyleSheet, Keyboard, RefreshControl, Animated, BackHandler, PanResponder } from 'react-native';
 import { Text, IconButton, Surface, Button, useTheme } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import MaterialCommunityIcons from '../components/MaterialCommunityIcons';
 import { fetchCountries, fetchPathOfLegendRankings, fetchClanWarRankings, fetchMergeTacticsRankings } from '../api/client';
 import AppHeader from '../components/AppHeader';
 import LocationBar from '../components/LocationBar';
