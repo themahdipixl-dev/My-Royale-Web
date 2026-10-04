@@ -13,7 +13,13 @@ import BottomNav from './components/BottomNav';
 export default function App() {
   const theme = useTheme();
 
-  useFonts([MaterialCommunityIcons.font]);
+  // Load the exact same MCI TTF used by the icon family from our local bundle.
+  // Keeping the local font as the first source avoids relying on the package's
+  // web font URL/path resolution, which can render missing-glyph rectangles.
+  useFonts({
+    MaterialCommunityIcons: require('./assets/fonts/MaterialCommunityIcons.ttf'),
+  });
+
   const { width: windowWidth } = useWindowDimensions();
   const [activeTab, setActiveTab] = useState('home');
   const activeTabRef = useRef(activeTab);
@@ -26,7 +32,6 @@ export default function App() {
 
   useEffect(() => {
     const subscription = BackHandler.addEventListener('hardwareBackPress', () => {
-      // RankingsScreen owns its overlays and list navigation.
       if (activeTab === 'rankings') {
         return false;
       }
