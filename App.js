@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { BackHandler, Animated, StyleSheet, PanResponder, useWindowDimensions } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { Text, useTheme } from 'react-native-paper';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { AppThemeProvider } from './theme/theme';
@@ -17,7 +16,7 @@ export default function App() {
   // Keeping the local font as the first source avoids relying on the package's
   // web font URL/path resolution, which can render missing-glyph rectangles.
   useFonts({
-    MaterialCommunityIcons: require('./assets/fonts/MaterialCommunityIcons.ttf'),
+    'material-community': require('./assets/fonts/MaterialCommunityIcons.ttf'),
   });
 
   const { width: windowWidth } = useWindowDimensions();
