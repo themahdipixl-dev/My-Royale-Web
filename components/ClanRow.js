@@ -1,7 +1,7 @@
 // * components/ClanRow.js — clan row press handling infrastructure (v65)
 import React, { useEffect, useRef } from 'react';
 import { Animated, StyleSheet, Text, View, Pressable } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import MaterialCommunityIcons from './MaterialCommunityIcons';
 import { Surface, useTheme } from 'react-native-paper';
 import { getClanBadgeImage } from '../utils/clanBadges';
 import RetryImage from './RetryImage';
