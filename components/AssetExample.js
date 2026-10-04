@@ -1,12 +1,11 @@
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function AssetExample() {
   return (
     <View style={styles.container}>
-      <Text style={styles.paragraph}>
-        Local files and assets can be imported by dragging and dropping them into the editor
-      </Text>
-      <Image style={styles.logo} source={require('../assets/snack-icon.png')} />
+      <MaterialCommunityIcons name="image-outline" size={48} color="#888" />
+      <Text style={styles.paragraph}>Asset example</Text>
     </View>
   );
 }
@@ -18,14 +17,9 @@ const styles = StyleSheet.create({
     padding: 24,
   },
   paragraph: {
-    margin: 24,
-    marginTop: 0,
+    marginTop: 12,
     fontSize: 14,
-    fontWeight: 'bold',
+    fontWeight: '700',
     textAlign: 'center',
   },
-  logo: {
-    height: 128,
-    width: 128,
-  }
 });
