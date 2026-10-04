@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Animated, View, Text, StyleSheet, Pressable } from 'react-native';
 import { Surface, useTheme } from 'react-native-paper';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import MaterialCommunityIcons from './MaterialCommunityIcons';
 import { getPlayerLeagueImage } from '../utils/playerLeagueassets';
 import RetryImage from './RetryImage';
 
