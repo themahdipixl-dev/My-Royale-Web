@@ -1525,6 +1525,26 @@ function EntityDetailsScreen({ entity, type = 'player', onBack }) {
     return () => subscription.remove();
   }, [onBack, showAllBadges]);
 
+  const loadBattlelog = useCallback(() => {
+    if (isClan || !tag || battlelogLoadingRef.current) return;
+
+    battlelogLoadingRef.current = true;
+    setBattleLoading(true);
+    setBattleError(null);
+
+    fetchPlayerBattlelog(tag)
+      .then((items) => {
+        setBattlelog(Array.isArray(items) ? items : []);
+      })
+      .catch((err) => {
+        setBattleError(err?.message || 'Could not load battle log.');
+      })
+      .finally(() => {
+        battlelogLoadingRef.current = false;
+        setBattleLoading(false);
+      });
+  }, [isClan, tag]);
+
   useEffect(() => {
     if (isClan || !tag) {
       setLoading(false);
@@ -1554,26 +1574,6 @@ function EntityDetailsScreen({ entity, type = 'player', onBack }) {
       cancelled = true;
     };
   }, [isClan, tag, loadBattlelog]);
-
-  const loadBattlelog = useCallback(() => {
-    if (isClan || !tag || battlelogLoadingRef.current) return;
-
-    battlelogLoadingRef.current = true;
-    setBattleLoading(true);
-    setBattleError(null);
-
-    fetchPlayerBattlelog(tag)
-      .then((items) => {
-        setBattlelog(Array.isArray(items) ? items : []);
-      })
-      .catch((err) => {
-        setBattleError(err?.message || 'Could not load battle log.');
-      })
-      .finally(() => {
-        battlelogLoadingRef.current = false;
-        setBattleLoading(false);
-      });
-  }, [isClan, tag]);
 
   const refreshProgress = useRef(new Animated.Value(0)).current;
   const refreshRotate = useRef(new Animated.Value(0)).current;
