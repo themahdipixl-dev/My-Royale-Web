@@ -8,7 +8,6 @@ import { fetchPlayer } from '../api/client';
 import { getClanBadgeImage } from '../utils/clanBadges';
 import { getPlayerLeagueImage } from '../utils/playerLeagueassets';
 import RetryImage from './RetryImage';
-const pointIcon = require('../assets/Point-icon.png');
 
 function firstValue(...values) {
   return values.find((value) => value !== undefined && value !== null && value !== '') ?? null;
@@ -523,7 +522,7 @@ export default function EntityPreviewModal({ visible, entity, type = 'player', c
               <View style={styles.clanBody}>
                 <View style={styles.primaryStats}>
                   <View style={[styles.primaryStat, { backgroundColor: theme.colors.primaryContainer, borderColor: theme.colors.primary + '55' }]}>
-                    <Image source={pointIcon} style={styles.primaryStatIcon} resizeMode="contain" />
+                    <MaterialCommunityIcons name="trophy-variant" size={22} color={theme.colors.primary} style={styles.primaryStatIcon} />
                     <View style={styles.statText}>
                       <Text style={[styles.statLabel, { color: theme.colors.onPrimaryContainer }]}>Clan score</Text>
                       <AnimatedCounterText value={formatNumber(score)} style={[styles.statValue, { color: theme.colors.onPrimaryContainer }]} />
