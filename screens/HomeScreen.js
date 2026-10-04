@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Animated, BackHandler, Keyboard, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Text, Surface, useTheme } from 'react-native-paper';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import MaterialCommunityIcons from '../components/MaterialCommunityIcons';
 import { fetchSearch } from '../api/client';
 import EntityDetailsScreen from './EntityDetailsScreen';
 import TournamentDetailsScreen from './TournamentDetailsScreen';
