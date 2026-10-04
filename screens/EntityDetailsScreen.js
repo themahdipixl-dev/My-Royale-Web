@@ -1920,7 +1920,7 @@ function EntityDetailsScreen({ entity, type = 'player', onBack }) {
               </Text>
             </Pressable>
             <View style={styles.statGrid}>
-              <StatTile icon="trophy-outline" label="Clan score" value={formatNumber(firstValue(data.clanScore, data.clanWarTrophies, data.score, data.trophies))} theme={theme} image={pointIcon} />
+              <StatTile icon="trophy-outline" label="Clan score" value={formatNumber(firstValue(data.clanScore, data.clanWarTrophies, data.score, data.trophies))} theme={theme} />
               <StatTile icon="account-group" label="Members" value={formatNumber(firstValue(data.members, data.memberCount, data.membersCount))} theme={theme} />
             </View>
           </Surface></AnimatedSection>
@@ -2051,7 +2051,7 @@ function EntityDetailsScreen({ entity, type = 'player', onBack }) {
                   ]}
                 >
                   <View style={styles.heroTrophyHalf}>
-                    <Image source={pointIcon} style={styles.heroBoxPointIcon} resizeMode="contain" />
+                    <MaterialCommunityIcons name="trophy-variant" size={24} color={theme.colors.primary} />
                     <View style={styles.heroBoxText}>
                       <Text style={[styles.heroBoxLabel, { color: theme.colors.onSurfaceVariant }]}>Trophies</Text>
                       <Text style={[styles.heroBoxValue, { color: theme.colors.onSurface }]}>
@@ -2141,7 +2141,7 @@ function EntityDetailsScreen({ entity, type = 'player', onBack }) {
                     League {formatLeagueNumber(currentPol?.leagueNumber)}
                   </Text>
                   <View style={styles.polTrophyLine}>
-                    <Image source={pointIcon} style={styles.polTrophyIcon} resizeMode="contain" />
+                    <MaterialCommunityIcons name="trophy-variant" size={24} color={theme.colors.primary} />
                     <Text style={[styles.polTrophyValue, { color: theme.colors.onSurface }]}>
                       {formatNumber(currentPol?.trophies)}
                     </Text>
@@ -2179,7 +2179,7 @@ function EntityDetailsScreen({ entity, type = 'player', onBack }) {
                       {formatNumber(season?.trophies)}
                     </Text>
                     <View style={styles.polHistoryRankRow}>
-                      <Image source={pointIcon} style={styles.polMiniTrophyIcon} resizeMode="contain" />
+                      <MaterialCommunityIcons name="trophy-variant" size={18} color={theme.colors.primary} />
                       <Text style={[styles.polHistoryMeta, { color: theme.colors.onSurfaceVariant }]}>
                         {season?.rank ? `#${formatNumber(season.rank)}` : 'No rank'}
                       </Text>
