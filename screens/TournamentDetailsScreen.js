@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { Animated, ScrollView, StyleSheet, View } from 'react-native';
 import { IconButton, Surface, Text, useTheme } from 'react-native-paper';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import MaterialCommunityIcons from '../components/MaterialCommunityIcons';
 
 function value(...items) {
   return items.find((item) => item !== undefined && item !== null && item !== '') ?? '—';
