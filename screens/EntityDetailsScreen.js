@@ -26,7 +26,6 @@ import { fetchPlayer, fetchPlayerBattlelog } from '../api/client';
 import { getClanBadgeImage } from '../utils/clanBadges';
 import { getPlayerLeagueImage } from '../utils/playerLeagueassets';
 import RetryImage from '../components/RetryImage';
-const pointIcon = require('../assets/Point-icon.png');
 const loadedBadgeImageUris = new Set();
 
 if (
@@ -1238,7 +1237,7 @@ function BattleRow({ battle, theme, index, expanded, onToggle, onCopyDeck, onSav
       <View style={[styles.battleTrophyCluster, side === "right" && styles.battleTrophyClusterRight]}>
         {trophies !== null ? (
           <View style={[styles.battleTrophyValue, { borderColor: accent }]}>
-            <Image source={pointIcon} style={styles.battleTrophyIcon} resizeMode="contain" />
+            <MaterialCommunityIcons name="trophy-variant" size={20} color={accent} style={styles.battleTrophyIcon} />
             <Text style={[styles.battleTrophyText, { color: theme.colors.onSurface }]}>{formatNumber(trophies)}</Text>
           </View>
         ) : null}
