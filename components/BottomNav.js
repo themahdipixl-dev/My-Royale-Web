@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Animated, PanResponder, StyleSheet, View } from 'react-native';
 import { Surface, useTheme } from 'react-native-paper';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import MaterialCommunityIcons from './MaterialCommunityIcons';
 import AnimatedPressable from './AnimatedPressable';
 
 const ITEMS = [
